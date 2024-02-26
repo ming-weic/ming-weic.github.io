@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>my first blog</title>
+    <url>/2024/02/24/my-first-blog/</url>
+    <content><![CDATA[<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>个人博客的第一张帖子(😀</p>
+<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>测试</p>
+<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p>结束</p>
+]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>自制麻将规则(无风牌)</title>
+    <url>/2024/02/25/%E8%87%AA%E5%88%B6%E9%BA%BB%E5%B0%86%E8%A7%84%E5%88%99(%E6%97%A0%E9%A3%8E%E7%89%8C)/</url>
+    <content><![CDATA[<br>
+<font size = 4>结合了国标麻将和日本麻将的优点，一种攻守兼备的新麻将规则，参数如下~</font>
+
+<br>
+<font size = 6>1.番种表</font>
+<center><font size = 4>普通番种</font></center>
+
+<table>
+<thead>
+<tr>
+<th align="center">番数</th>
+<th align="left"><code>&lt;center&gt;</code>番种 <code>&lt;/center&gt;</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1番</td>
+<td align="left">明杠、暗杠、幺九刻、一色二连刻、老少副、一般高、二色同顺、连六、缺一门</td>
+</tr>
+<tr>
+<td align="center">2番</td>
+<td align="left">断幺九、双暗刻、双同刻(二色同刻)、平和、门前清、箭刻(中发白)、十二落抬(四副露)</td>
+</tr>
+<tr>
+<td align="center">2番</td>
+<td align="left">岭上开花、抢杠和、海底捞月、妙手回春</td>
+</tr>
+<tr>
+<td align="center">3番</td>
+<td align="left">不求人(门清自摸和)、全求人(四附露铳和)、碰碰和、三色同顺、花龙、双杠子、混带幺</td>
+</tr>
+<tr>
+<td align="center">4番</td>
+<td align="left">三色同刻、混一色、清龙、七对(不计门清)、纯带幺</td>
+</tr>
+<tr>
+<td align="center">6番</td>
+<td align="left">三暗刻、三色双龙会</td>
+</tr>
+<tr>
+<td align="center">8番</td>
+<td align="left">一色三同顺、一色三连刻、清一色</td>
+</tr>
+<tr>
+<td align="center">10番</td>
+<td align="left">十二金钗(三杠子)、混幺九、小三元</td>
+</tr>
+<tr>
+<td align="center">12番</td>
+<td align="left">一色四同顺、一色四连刻</td>
+</tr>
+</tbody></table>
+<p>ps:同类番种不计子番、非子番型可叠加</p>
+<center><font size = 4>役满番种</font></center>
+
+<table>
+<thead>
+<tr>
+<th align="center">分数</th>
+<th><code>&lt;center&gt;</code>番种名 <code>&lt;/center&gt;</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">50</td>
+<td>大三元、四暗刻、九莲宝灯、一色双龙会、十八罗汉(四杠子)、绿一色、清幺九、连七对、天和、地和</td>
+</tr>
+<tr>
+<td align="center">70</td>
+<td>纯正九莲宝灯、纯正绿一色、四暗刻单骑</td>
+</tr>
+</tbody></table>
+<p>ps:役满牌型不计普通番种、只与役满牌型叠加</p>
+<p><font size = 4>奖励番种 <code>&lt;/font&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>番数</th>
+<th><code>&lt;center&gt;</code>名 <code>&lt;/center&gt;</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1番</td>
+<td>宝牌、暗杠</td>
+</tr>
+</tbody></table>
+<p>ps:此番种仅胡牌后有效</p>
+<br>
+<br>
+<font size = 6>2.计分</font>
+
+<table>
+<thead>
+<tr>
+<th align="center">番数(F)</th>
+<th align="center">分数(N)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1-4</td>
+<td align="center">F</td>
+</tr>
+<tr>
+<td align="center">5-6</td>
+<td align="center">F+2</td>
+</tr>
+<tr>
+<td align="center">7-8</td>
+<td align="center">F+3</td>
+</tr>
+<tr>
+<td align="center">9-10</td>
+<td align="center">F+5</td>
+</tr>
+<tr>
+<td align="center">11-12</td>
+<td align="center">F+8</td>
+</tr>
+<tr>
+<td align="center">13-14</td>
+<td align="center">F+12</td>
+</tr>
+<tr>
+<td align="center">15-16</td>
+<td align="center">F+17</td>
+</tr>
+<tr>
+<td align="center">17</td>
+<td align="center">40</td>
+</tr>
+<tr>
+<td align="center">18</td>
+<td align="center">50</td>
+</tr>
+</tbody></table>
+<br>
+<br>
+<font size = 6>3.规则(无庄闲家)</font>
+
+<ol>
+<li>放铳支付2F点数、自摸另外三家每人支付F点数。</li>
+<li>振听，不能胡自己牌河里的牌。</li>
+<li>立直后不能改听，算一番。开杠多一张宝牌，立直胡牌后可开一张宝牌。</li>
+<li>两番非奖励番起和</li>
+</ol>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>mahjong</tag>
+        <tag>一个想法</tag>
+      </tags>
+  </entry>
+</search>
