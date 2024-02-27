@@ -22,30 +22,33 @@
     var CONFIG = {"hostname":"ming-weic.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="多吃维C">
-<meta property="og:url" content="https://ming-weic.github.io/index.html">
+  <meta name="description" content="基础概念函数依赖：  函数依赖（Functional Dependency）表示在数据库表中的两个属性之间的关系，其中一个属性的值决定另一个属性的值。 用符号表示为 X -&gt; Y，其中 X 是决定属性 Y 的集合。  非平凡的函数依赖：  非平凡的函数依赖是指 X -&gt; Y，其中 Y 不包含于 X，这意味着 X 对 Y 有真正的函数依赖，而不是简单的平凡依赖。 如果Y包含于X，则称X对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库范式规范化">
+<meta property="og:url" content="https://ming-weic.github.io/2024/02/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%8C%83%E5%BC%8F%E8%A7%84%E8%8C%83%E5%8C%96/index.html">
 <meta property="og:site_name" content="多吃维C">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="基础概念函数依赖：  函数依赖（Functional Dependency）表示在数据库表中的两个属性之间的关系，其中一个属性的值决定另一个属性的值。 用符号表示为 X -&gt; Y，其中 X 是决定属性 Y 的集合。  非平凡的函数依赖：  非平凡的函数依赖是指 X -&gt; Y，其中 Y 不包含于 X，这意味着 X 对 Y 有真正的函数依赖，而不是简单的平凡依赖。 如果Y包含于X，则称X对">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-02-27T23:33:38.000Z">
+<meta property="article:modified_time" content="2024-02-27T23:49:16.267Z">
 <meta property="article:author" content="Ming">
+<meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://ming-weic.github.io/">
+<link rel="canonical" href="https://ming-weic.github.io/2024/02/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%8C%83%E5%BC%8F%E8%A7%84%E8%8C%83%E5%8C%96/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>多吃维C</title>
+  <title>数据库范式规范化 | 多吃维C</title>
   
 
 
@@ -192,9 +195,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -210,10 +214,9 @@
       <meta itemprop="name" content="多吃维C">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/02/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%8C%83%E5%BC%8F%E8%A7%84%E8%8C%83%E5%8C%96/" class="post-title-link" itemprop="url">数据库范式规范化</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          数据库范式规范化
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -235,7 +238,14 @@
                 </span>
             </span>
 
-          <br>
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
@@ -260,7 +270,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h1><p><strong>函数依赖：</strong></p>
+        <h1 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h1><p><strong>函数依赖：</strong></p>
 <ul>
 <li>函数依赖（Functional Dependency）表示在数据库表中的两个属性之间的关系，其中一个属性的值决定另一个属性的值。</li>
 <li>用符号表示为 X -&gt; Y，其中 X 是决定属性 Y 的集合。</li>
@@ -340,433 +350,65 @@
 <li>第四范式的目标是处理多值依赖，确保数据表不包含重复信息，以保持数据库的一致性。</li>
 </ul>
 
-      
     </div>
 
     
     
     
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechat.jpg" alt="Ming 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Ming
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://ming-weic.github.io/2024/02/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%8C%83%E5%BC%8F%E8%A7%84%E8%8C%83%E5%8C%96/" title="数据库范式规范化">https://ming-weic.github.io/2024/02/28/数据库范式规范化/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"># 数据库</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ming-weic.github.io/2024/02/26/DNS%E5%AD%A6%E4%B9%A0_1/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/tou.jpg">
-      <meta itemprop="name" content="Ming">
-      <meta itemprop="description" content="个人博客">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="多吃维C">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/02/26/DNS%E5%AD%A6%E4%B9%A0_1/" class="post-title-link" itemprop="url">DNS入门学习</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-02-26 16:30:37 / 修改时间：16:36:30" itemprop="dateCreated datePublished" datetime="2024-02-26T16:30:37+08:00">2024-02-26</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">计网</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="CNAME记录和A记录的区别"><a href="#CNAME记录和A记录的区别" class="headerlink" title="CNAME记录和A记录的区别"></a>CNAME记录和A记录的区别</h1><p><strong>一、什么是A记录</strong></p>
-<p>A记录是DNS解析中最常见也是用途最广的一种DNS记录类型，它用于将域名指向对应的IP地址空间，通过添加A记录相当于告诉DNS系统，当用户输入域名时将其导向A记录所设置的服务器IP地址。如我们需要将<a target="_blank" rel="noopener" href="http://www.example.com这个域名指向1.1.1.1这个ip地址,就需要添加一条a记录,即可完成域名与ip地址之间的绑定关系.需要注意的是a记录仅适用于ipv4地址解析,ipv6地址需要使用aaaa/">http://www.example.com这个域名指向1.1.1.1这个IP地址，就需要添加一条A记录，即可完成域名与IP地址之间的绑定关系。需要注意的是A记录仅适用于IPv4地址解析，IPv6地址需要使用AAAA</a> 记录。</p>
-<p><strong>二、什么是CNAME记录？</strong></p>
-<p>CNAME记录是DNS解析中另一种比较常见的记录类型，它与A记录不同，它代表的是主机名到主机名的映射。当我们想将域名指向另一个域名，而不是一个IP地址时，这时候就需要添加一条CNAME记录。比如，我们需要将<a target="_blank" rel="noopener" href="http://www.example.com这个域名指向另外一个域名http//test.example.com%EF%BC%8C%E8%BF%99%E6%97%B6%E5%80%99%E5%B0%B1%E9%9C%80%E8%A6%81%E6%B7%BB%E5%8A%A0CNAME%E8%AE%B0%E5%BD%95%EF%BC%8C%E8%80%8C%E9%9D%9EA%E8%AE%B0%E5%BD%95%E3%80%82">http://www.example.com这个域名指向另外一个域名http://test.example.com，这时候就需要添加CNAME记录，而非A记录。</a></p>
-<p>CNAME比较常见的应用场景是，一个公司拥有多个域名指向一个IP地址，如果IP地址发生变更，就需要针对每一个域名做A记录修改，不仅效率低，还容易出错。这种情况下，我们就可以使用其中一个域名或单独创建一个新的域名，将这个域名做一条A记录指向目标IP地址，然后将其他域名做CNAME记录指向该域名。当IP地址发生变更时，只需要对CNAME指向的域名做修改即可，而无需针对每一个域名做更改，这样就大幅提升了工作效率，降低了操作失误的风险。此外，CNAME记录还经常用于CDN、企业邮箱、全局流量管理的场景。</p>
-<p><strong>三、A记录和CNAME记录的区别</strong></p>
-<p>A记录和CNAME记录最终都是为了实现域名与服务器IP地之间的映射关系，但区别在于A记录直接将域名解析到一个IP地址，而CNAME记录则需要将域名解析到另外一个域名，然后由另外一个域名解析到IP地址。</p>
-<p><strong>四、A记录和CNAME记录哪个更好？</strong></p>
-<p>如果仅考虑网站的使用，两者之间没有太大的区别，一般情况下，如果没有太多的域名，只需要A记录就能实现域名解析效果。如果存在比较多的域名指向，采用CNAME记录能够实现域名解析的统一管理和修改，效率更高更便捷。另外CNAME记录的应用场景也更加广泛，很多服务商为了方便运维一般都建议用户使用CNAME记录绑定域名。</p>
-<p>但从网站SEO的角度来看，CNAME记录也存在一些弊端，CNAME记录必须添加www或者其他前缀的域名，不能直接使用主域名做解析，这样就可能导致用户无法通过不含www的域名来访问网站，这对网站的SEO有一定影响。而A记录则不受这样的限制，在添加A记录时主机值填写“@”就能实现不含www的域名的解析。</p>
-<p><strong>五、总结</strong><br>A记录和CNAME记录都能实现域名的解析效果，但各自作用和使用场景不尽相同，需要根据实际业务需求去做选择。</p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/02/26/DNS%E5%AD%A6%E4%B9%A0_1/" rel="prev" title="DNS入门学习">
+      <i class="fa fa-chevron-left"></i> DNS入门学习
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ming-weic.github.io/2024/02/25/%E8%87%AA%E5%88%B6%E9%BA%BB%E5%B0%86%E8%A7%84%E5%88%99(%E6%97%A0%E9%A3%8E%E7%89%8C)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/tou.jpg">
-      <meta itemprop="name" content="Ming">
-      <meta itemprop="description" content="个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="多吃维C">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/02/25/%E8%87%AA%E5%88%B6%E9%BA%BB%E5%B0%86%E8%A7%84%E5%88%99(%E6%97%A0%E9%A3%8E%E7%89%8C)/" class="post-title-link" itemprop="url">自制麻将规则(无风牌)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-02-25 18:34:43" itemprop="dateCreated datePublished" datetime="2024-02-25T18:34:43+08:00">2024-02-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-02-26 01:39:02" itemprop="dateModified" datetime="2024-02-26T01:39:02+08:00">2024-02-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>681</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <br>
-<font size = 4>结合了国标麻将和日本麻将的优点，一种攻守兼备的新麻将规则，参数如下~</font>
-
-<br>
-<font size = 6>1.番种表</font>
-<center><font size = 4>普通番种</font></center>
-
-<table>
-<thead>
-<tr>
-<th align="center">番数</th>
-<th align="left"><code>&lt;center&gt;</code>番种 <code>&lt;/center&gt;</code></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1番</td>
-<td align="left">明杠、暗杠、幺九刻、一色二连刻、老少副、一般高、二色同顺、连六、缺一门</td>
-</tr>
-<tr>
-<td align="center">2番</td>
-<td align="left">断幺九、双暗刻、双同刻(二色同刻)、平和、门前清、箭刻(中发白)、十二落抬(四副露)</td>
-</tr>
-<tr>
-<td align="center">2番</td>
-<td align="left">岭上开花、抢杠和、海底捞月、妙手回春</td>
-</tr>
-<tr>
-<td align="center">3番</td>
-<td align="left">不求人(门清自摸和)、全求人(四附露铳和)、碰碰和、三色同顺、花龙、双杠子、混带幺</td>
-</tr>
-<tr>
-<td align="center">4番</td>
-<td align="left">三色同刻、混一色、清龙、七对(不计门清)、纯带幺</td>
-</tr>
-<tr>
-<td align="center">6番</td>
-<td align="left">三暗刻、三色双龙会</td>
-</tr>
-<tr>
-<td align="center">8番</td>
-<td align="left">一色三同顺、一色三连刻、清一色</td>
-</tr>
-<tr>
-<td align="center">10番</td>
-<td align="left">十二金钗(三杠子)、混幺九、小三元</td>
-</tr>
-<tr>
-<td align="center">12番</td>
-<td align="left">一色四同顺、一色四连刻</td>
-</tr>
-</tbody></table>
-<p>ps:同类番种不计子番、非子番型可叠加</p>
-<center><font size = 4>役满番种</font></center>
-
-<table>
-<thead>
-<tr>
-<th align="center">分数</th>
-<th><code>&lt;center&gt;</code>番种名 <code>&lt;/center&gt;</code></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">50</td>
-<td>大三元、四暗刻、九莲宝灯、一色双龙会、十八罗汉(四杠子)、绿一色、清幺九、连七对、天和、地和</td>
-</tr>
-<tr>
-<td align="center">70</td>
-<td>纯正九莲宝灯、纯正绿一色、四暗刻单骑</td>
-</tr>
-</tbody></table>
-<p>ps:役满牌型不计普通番种、只与役满牌型叠加</p>
-<p><font size = 4>奖励番种 <code>&lt;/font&gt;</code></p>
-<table>
-<thead>
-<tr>
-<th>番数</th>
-<th><code>&lt;center&gt;</code>名 <code>&lt;/center&gt;</code></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1番</td>
-<td>宝牌、暗杠</td>
-</tr>
-</tbody></table>
-<p>ps:此番种仅胡牌后有效</p>
-<br>
-<br>
-<font size = 6>2.计分</font>
-
-<table>
-<thead>
-<tr>
-<th align="center">番数(F)</th>
-<th align="center">分数(N)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1-4</td>
-<td align="center">F</td>
-</tr>
-<tr>
-<td align="center">5-6</td>
-<td align="center">F+2</td>
-</tr>
-<tr>
-<td align="center">7-8</td>
-<td align="center">F+3</td>
-</tr>
-<tr>
-<td align="center">9-10</td>
-<td align="center">F+5</td>
-</tr>
-<tr>
-<td align="center">11-12</td>
-<td align="center">F+8</td>
-</tr>
-<tr>
-<td align="center">13-14</td>
-<td align="center">F+12</td>
-</tr>
-<tr>
-<td align="center">15-16</td>
-<td align="center">F+17</td>
-</tr>
-<tr>
-<td align="center">17</td>
-<td align="center">40</td>
-</tr>
-<tr>
-<td align="center">18</td>
-<td align="center">50</td>
-</tr>
-</tbody></table>
-<br>
-<br>
-<font size = 6>3.规则(无庄闲家)</font>
-
-<ol>
-<li>放铳支付2F点数、自摸另外三家每人支付F点数。</li>
-<li>振听，不能胡自己牌河里的牌。</li>
-<li>立直后不能改听，算一番。开杠多一张宝牌，立直胡牌后可开一张宝牌。</li>
-<li>两番非奖励番起和</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ming-weic.github.io/2024/02/24/my-first-blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/tou.jpg">
-      <meta itemprop="name" content="Ming">
-      <meta itemprop="description" content="个人博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="多吃维C">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/02/24/my-first-blog/" class="post-title-link" itemprop="url">my first blog</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-02-24 11:07:38" itemprop="dateCreated datePublished" datetime="2024-02-24T11:07:38+08:00">2024-02-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-02-26 02:08:58" itemprop="dateModified" datetime="2024-02-26T02:08:58+08:00">2024-02-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9D%82%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">杂记</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>26</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>个人博客的第一张帖子(😀</p>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>测试</p>
-<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p>结束</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -819,6 +461,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">基础概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%8C%83%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">范式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E8%8C%83%E5%BC%8F-1NF-%EF%BC%9A"><span class="nav-number">2.0.1.</span> <span class="nav-text">第一范式 (1NF)：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E8%8C%83%E5%BC%8F-2NF-%EF%BC%9A"><span class="nav-number">2.0.2.</span> <span class="nav-text">第二范式 (2NF)：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E8%8C%83%E5%BC%8F-3NF-%EF%BC%9A"><span class="nav-number">2.0.3.</span> <span class="nav-text">第三范式 (3NF)：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%B4%E6%96%AF-%E7%A7%91%E5%BE%B7%E8%8C%83%E5%BC%8F-BCNF-%EF%BC%9A"><span class="nav-number">2.0.4.</span> <span class="nav-text">巴斯-科德范式 (BCNF)：</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
